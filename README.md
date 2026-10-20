@@ -1,0 +1,1 @@
+Web Development Activity-Based Learning, this repository contains my projects created as part of my college assignment, including a personal portfolio website, a bakery and cake shop website, and a student academic dashboard. Then commit the changes. 
