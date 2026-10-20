@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumbs Bakery | Freshly Baked Happiness</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf5;
+            color: #432b25;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #572c2c;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 26px;
+            color: #ffd9a0;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd9a0;
+        }
+
+        .hero {
+            min-height: 440px;
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(
+                rgba(60, 25, 20, 0.72),
+                rgba(60, 25, 20, 0.72)
+            ),
+            url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80");
+            background-position: center;
+            background-size: cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #e9a45b;
+            color: #351c18;
+            padding: 12px 26px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffd9a0;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #783f32;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            color: #725b53;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(80, 40, 30, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-7px);
+        }
+
+        .feature h3 {
+            color: #783f32;
+            margin-bottom: 10px;
+        }
+
+        #menu {
+            background-color: #f8ede3;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(70, 30, 20, 0.10);
+            transition: transform 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-info h3 {
+            color: #783f32;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #a64b35;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .order-note {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        #gallery {
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.04);
+        }
+
+        #contact {
+            background-color: #f8ede3;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(80, 40, 30, 0.08);
+        }
+
+        .contact-box p {
+            margin: 12px 0;
+        }
+
+        .contact-box a {
+            color: #8b4030;
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 22px;
+            background-color: #783f32;
+            color: white !important;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #a64b35;
+        }
+
+        footer {
+            background-color: #572c2c;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 850px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .features,
+            .menu-grid,
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h2 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .features,
+            .menu-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 45px 6%;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <h1>Sweet Crumbs Bakery</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Our Menu</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Freshly Baked Happiness</h2>
+
+            <p>
+                Delicious cakes, soft pastries, and freshly baked treats
+                made with love for every special moment.
+            </p>
+
+            <a href="#menu" class="btn">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Welcome to Our Bakery</h2>
+
+        <p class="section-description">
+            Every bite brings a little sweetness to your day.
+        </p>
+
+        <div class="about-content">
+            <p>
+                Sweet Crumbs Bakery is a bakery website created to showcase
+                delicious cakes, pastries, cookies, and other baked products.
+                Our goal is to make every celebration more memorable with
+                beautiful designs and delightful flavours.
+            </p>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>Fresh Ingredients</h3>
+                    <p>We focus on quality ingredients and delicious flavours.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>Beautiful Cakes</h3>
+                    <p>Discover cakes suitable for birthdays and celebrations.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>Made with Love</h3>
+                    <p>Every treat is presented with care and creativity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2 class="section-title">Our Delicious Menu</h2>
+
+        <p class="section-description">
+            Explore some of our favourite bakery treats.
+            Prices shown are sample prices for this project.
+        </p>
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+                <img
+                    src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
+                    alt="Chocolate celebration cake">
+
+                <div class="menu-info">
+                    <h3>Chocolate Cake</h3>
+                    <p>Rich chocolate flavour for chocolate lovers.</p>
+                    <p class="price">₹450</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img
+                    src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80"
+                    alt="Strawberry dessert">
+
+                <div class="menu-info">
+                    <h3>Strawberry Delight</h3>
+                    <p>A sweet dessert with a fruity touch.</p>
+                    <p class="price">₹350</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img
+                    src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80"
+                    alt="Freshly baked croissants">
+
+                <div class="menu-info">
+                    <h3>Butter Croissant</h3>
+                    <p>A flaky pastry perfect for breakfast.</p>
+                    <p class="price">₹90</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img
+                    src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80"
+                    alt="Glazed doughnuts">
+
+                <div class="menu-info">
+                    <h3>Glazed Doughnuts</h3>
+                    <p>Soft, sweet doughnuts for a little treat.</p>
+                    <p class="price">₹70</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img
+                    src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80"
+                    alt="Freshly baked cookies">
+
+                <div class="menu-info">
+                    <h3>Chocolate Cookies</h3>
+                    <p>Crispy cookies with a delicious chocolate taste.</p>
+                    <p class="price">₹120</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img
+                    src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80"
+                    alt="Decorated cupcakes">
+
+                <div class="menu-info">
+                    <h3>Vanilla Cupcakes</h3>
+                    <p>Small, delightful treats for every occasion.</p>
+                    <p class="price">₹80</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="order-note">
+            <p>Want to enquire about a cake or bakery product?</p>
+            <br>
+            <a href="#contact" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title">Our Sweet Gallery</h2>
+
+        <p class="section-description">
+            A glimpse of the delicious treats featured in our bakery.
+        </p>
+
+        <div class="gallery-grid">
+            <img
+                src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80"
+                alt="Celebration cake">
+
+            <img
+                src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80"
+                alt="Bakery dessert">
+
+            <img
+                src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=800&q=80"
+                alt="Fresh bakery treats">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Our Bakery</h2>
+
+        <p class="section-description">
+            Have a question or want to enquire about our products?
+            Get in touch with us.
+        </p>
+
+        <div class="contact-box">
+            <p><strong>Bakery Name:</strong> Sweet Crumbs Bakery</p>
+
+            <p><strong>Email:</strong>
+                <a href="mailto:sweetcrumbsbakery@example.com">
+                    sweetcrumbsbakery@example.com
+                </a>
+            </p>
+
+            <p><strong>Phone:</strong> +91 90000 00000</p>
+
+            <p><strong>Working Hours:</strong> 9:00 AM – 9:00 PM</p>
+
+            <p><strong>Location:</strong> Vijayawada, Andhra Pradesh</p>
+
+            <a
+                href="mailto:sweetcrumbsbakery@example.com?subject=Bakery%20Enquiry"
+                class="contact-button">
+                Send an Email Enquiry
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sweet Crumbs Bakery. All rights reserved.</p>
+        <p>Designed as a Web Development Activity-Based Learning Project.</p>
+    </footer>
+
+</body>
+</html>
