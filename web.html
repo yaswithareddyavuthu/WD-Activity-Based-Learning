@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yaswitha's Portfolio | Avuthu Yaswitha Reddy</title>
+
+    <style>
+        /* ===== GENERAL STYLING ===== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #6c4cff;
+            --primary-dark: #5035d4;
+            --dark: #17152b;
+            --light: #f7f6ff;
+            --text: #45445a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ===== NAVIGATION BAR ===== */
+
+        header {
+            background: var(--dark);
+            color: var(--white);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px #00000020;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #b6a8ff;
+        }
+
+        nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #b6a8ff;
+        }
+
+        /* ===== HOME SECTION ===== */
+
+        .hero {
+            min-height: 88vh;
+            padding: 75px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+
+            background:
+                radial-gradient(circle at top right, #ddd6ff, transparent 45%),
+                linear-gradient(135deg, #f7f6ff, #ece8ff);
+        }
+
+        .hero-content {
+            flex: 1 1 350px;
+            max-width: 650px;
+            animation: fadeIn 1s ease;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e5e0ff;
+            color: #5334d6;
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: var(--dark);
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 23px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 2px solid var(--primary);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        .profile-card {
+            width: 280px;
+            padding: 35px 25px;
+            background: white;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 50px #5b45a522;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .avatar {
+            width: 135px;
+            height: 135px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6c4cff, #b4a5ff);
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+            border: 6px solid #eeeaff;
+        }
+
+        .profile-card h3 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .profile-card p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* ===== COMMON SECTION STYLING ===== */
+
+        section {
+            padding: 75px 8%;
+            scroll-margin-top: 100px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading span {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            color: var(--dark);
+            font-size: clamp(27px, 4vw, 36px);
+            margin-top: 5px;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: 10px auto 0;
+        }
+
+        /* ===== ABOUT ME ===== */
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px #00000008;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* ===== EDUCATION ===== */
+
+        .education {
+            background: white;
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .education-item {
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            background: var(--light);
+            border-radius: 0 12px 12px 0;
+            transition: transform 0.3s;
+        }
+
+        .education-item:hover {
+            transform: translateX(7px);
+        }
+
+        .education-item h3 {
+            color: var(--dark);
+        }
+
+        .year {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* ===== CARDS ===== */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 27px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px #00000008;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px #6c4cff18;
+        }
+
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        /* ===== TECHNICAL SKILLS ===== */
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 17px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: #e8e5f4;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 7px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            width: var(--level);
+            background: linear-gradient(90deg, #6c4cff, #b6a8ff);
+            animation: grow 1.5s ease;
+        }
+
+        /* ===== HOBBIES ===== */
+
+        .hobbies {
+            background: white;
+        }
+
+        .hobby-card {
+            text-align: center;
+        }
+
+        .hobby-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        /* ===== PROJECTS ===== */
+
+        .project-card {
+            border-top: 4px solid var(--primary);
+        }
+
+        .project-number {
+            color: #c8c0ff;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .project-type {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 11px;
+            background: #eeeaff;
+            color: #5334d6;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* ===== ACHIEVEMENTS ===== */
+
+        .achievement-card {
+            border-left: 4px solid var(--primary);
+        }
+
+        /* ===== RESUME ===== */
+
+        .resume {
+            background: linear-gradient(135deg, #ece8ff, #f8f7ff);
+            text-align: center;
+        }
+
+        .resume-box {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 40px 25px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px #6c4cff12;
+        }
+
+        /* ===== CONTACT ===== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .contact-card {
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px #00000008;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 25px 8%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes grow {
+            from {
+                width: 0;
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                text-align: center;
+                gap: 35px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <header>
+
+        <div class="logo">Yaswitha's Portfolio</div>
+
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- HOME SECTION -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="tag">
+                    CSE | Artificial Intelligence & Machine Learning
+                </span>
+
+                <h1>
+                    Hi, I'm<br>
+                    <span>Avuthu Yaswitha Reddy</span>
+                </h1>
+
+                <p>
+                    A first-year Computer Science Engineering student
+                    passionate about technology, creative problem-solving,
+                    and discovering useful digital tools. I am building
+                    my foundation in programming and web development
+                    while exploring ideas that can make a difference.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">
+                        Explore My Projects
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="profile-card">
+
+                <div class="avatar">YR</div>
+
+                <h3>Avuthu Yaswitha Reddy</h3>
+
+                <p>B.Tech CSE (AI & ML)</p>
+
+                <p>First Year | First Semester</p>
+
+                <p>Andhra Pradesh, India</p>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT ME -->
+
+        <section id="about">
+
+            <div class="section-heading">
+                <span>Get to know me</span>
+                <h2>About Me</h2>
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    Hello! I am
+                    <span class="highlight">Avuthu Yaswitha Reddy</span>,
+                    a first-year, first-semester B.Tech student
+                    specializing in Computer Science Engineering
+                    with Artificial Intelligence and Machine Learning
+                    at Dr. RVR NRI Institute of Technology,
+                    Dr. RVR NRI Deemed to be University, Andhra Pradesh.
+                </p>
+
+                <p>
+                    I am interested in learning how technology works,
+                    exploring useful digital tools, and creating
+                    websites that are attractive, accessible,
+                    and easy to use.
+                </p>
+
+                <p>
+                    Beyond academics, I enjoy visiting cafes and
+                    restaurants, watching new movies, participating
+                    in speaking competitions, and discovering new ideas.
+                    I aim to keep learning, strengthen my technical
+                    skills, and grow into a confident technology
+                    professional.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- EDUCATIONAL QUALIFICATIONS -->
+
+        <section class="education" id="education">
+
+            <div class="section-heading">
+                <span>My Academic Journey</span>
+                <h2>Educational Qualifications</h2>
+            </div>
+
+            <div class="timeline">
+
+                <div class="education-item">
+
+                    <span class="year">
+                        Current | First Year, First Semester
+                    </span>
+
+                    <h3>Bachelor of Technology (B.Tech)</h3>
+
+                    <p>
+                        Computer Science Engineering
+                        — Artificial Intelligence & Machine Learning
+                    </p>
+
+                    <p>
+                        Dr. RVR NRI Institute of Technology
+                    </p>
+
+                    <p>
+                        Dr. RVR NRI Deemed to be University,
+                        Andhra Pradesh
+                    </p>
+
+                </div>
+
+                <div class="education-item">
+
+                    <span class="year">2024 – 2026</span>
+
+                    <h3>Intermediate — MPC</h3>
+
+                    <p>Sri Chaitanya</p>
+
+                    <p>
+                        Mathematics, Physics and Chemistry
+                    </p>
+
+                </div>
+
+                <div class="education-item">
+
+                    <span class="year">2023 – 2024</span>
+
+                    <h3>Secondary School Education</h3>
+
+                    <p>Sri Chaitanya</p>
+
+                    <p>Percentage: 90%</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+
+        <section id="skills">
+
+            <div class="section-heading">
+
+                <span>What I am learning</span>
+
+                <h2>Technical Skills</h2>
+
+                <p>
+                    Building a strong foundation in computer science
+                    and modern digital technologies.
+                </p>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="card">
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        Creating structured and accessible webpages.
+                    </p>
+
+                    <div class="skill-label">
+                        <span>Learning</span>
+                        <span>Beginner</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress"
+                             style="--level: 65%"></div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Designing layouts, colors, animations,
+                        and responsive pages.
+                    </p>
+
+                    <div class="skill-label">
+                        <span>Learning</span>
+                        <span>Beginner</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress"
+                             style="--level: 55%"></div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Python</h3>
+
+                    <p>
+                        Learning programming fundamentals
+                        and problem-solving.
+                    </p>
+
+                    <div class="skill-label">
+                        <span>Learning</span>
+                        <span>Basic</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress"
+                             style="--level: 40%"></div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Java</h3>
+
+                    <p>
+                        Developing an understanding
+                        of programming concepts.
+                    </p>
+
+                    <div class="skill-label">
+                        <span>Learning</span>
+                        <span>Basic</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress"
+                             style="--level: 35%"></div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>SQL</h3>
+
+                    <p>
+                        Exploring relational databases
+                        and SQL queries.
+                    </p>
+
+                    <div class="skill-label">
+                        <span>Learning</span>
+                        <span>Basic</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress"
+                             style="--level: 40%"></div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Digital Tools</h3>
+
+                    <p>
+                        Exploring useful digital tools,
+                        productivity applications,
+                        and emerging technologies.
+                    </p>
+
+                    <div class="skill-label">
+                        <span>Exploring</span>
+                        <span>Developing</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress"
+                             style="--level: 55%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- HOBBIES AND INTERESTS -->
+
+        <section class="hobbies" id="hobbies">
+
+            <div class="section-heading">
+
+                <span>Outside the classroom</span>
+
+                <h2>Interests & Hobbies</h2>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="card hobby-card">
+
+                    <div class="hobby-icon">☕</div>
+
+                    <h3>Cafe Exploration</h3>
+
+                    <p>
+                        Discovering new cafes, exploring different
+                        atmospheres, and enjoying memorable experiences.
+                    </p>
+
+                </div>
+
+                <div class="card hobby-card">
+
+                    <div class="hobby-icon">🍽️</div>
+
+                    <h3>Restaurants & Food</h3>
+
+                    <p>
+                        Visiting restaurants and experiencing
+                        different food, places, and cultures.
+                    </p>
+
+                </div>
+
+                <div class="card hobby-card">
+
+                    <div class="hobby-icon">🎬</div>
+
+                    <h3>Watching Movies</h3>
+
+                    <p>
+                        Watching newly released movies and exploring
+                        different genres and stories.
+                    </p>
+
+                </div>
+
+                <div class="card hobby-card">
+
+                    <div class="hobby-icon">💡</div>
+
+                    <h3>Technology Discovery</h3>
+
+                    <p>
+                        Exploring useful digital tools, discovering
+                        new technologies, and finding creative ways
+                        to use them.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PROJECTS -->
+
+        <section id="projects">
+
+            <div class="section-heading">
+
+                <span>My Web Development Work</span>
+
+                <h2>Activity-Based Learning Projects</h2>
+
+                <p>
+                    Three website projects selected for my
+                    Web Development Activity-Based Learning assignment.
+                </p>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="card project-card">
+
+                    <div class="project-number">01</div>
+
+                    <h3>Personal Portfolio Website</h3>
+
+                    <p>
+                        A professional portfolio presenting my profile,
+                        education, technical skills, interests,
+                        projects, achievements, resume,
+                        and contact information.
+                    </p>
+
+                    <span class="project-type">HTML & CSS</span>
+
+                </div>
+
+                <div class="card project-card">
+
+                    <div class="project-number">02</div>
+
+                    <h3>Bakery and Cake Shop Website</h3>
+
+                    <p>
+                        A visually appealing bakery website showcasing
+                        cakes, pastries, product prices, special offers,
+                        custom cake designs, and contact information.
+                    </p>
+
+                    <span class="project-type">HTML & CSS</span>
+
+                </div>
+
+                <div class="card project-card">
+
+                    <div class="project-number">03</div>
+
+                    <h3>Student Academic Dashboard</h3>
+
+                    <p>
+                        A student dashboard interface presenting
+                        academic information, subject details,
+                        attendance, results, examination schedules,
+                        and announcements.
+                    </p>
+
+                    <span class="project-type">HTML & CSS</span>
+
+                </div>
+
+            </div>
+
+            <p style="text-align: center; margin-top: 25px;">
+                These projects are part of my learning activity.
+                Their development and completion are ongoing.
+            </p>
+
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+
+        <section class="education" id="achievements">
+
+            <div class="section-heading">
+
+                <span>Milestones & Recognition</span>
+
+                <h2>Achievements</h2>
+
+            </div>
+
+            <div class="card-grid">
+
+                <div class="card achievement-card">
+
+                    <h3>Elocution Competitions</h3>
+
+                    <p>
+                        Received prizes in elocution competitions,
+                        developing public-speaking and presentation skills.
+                    </p>
+
+                </div>
+
+                <div class="card achievement-card">
+
+                    <h3>Debate Competitions</h3>
+
+                    <p>
+                        Earned recognition in debates through
+                        communication, reasoning, and expressing ideas.
+                    </p>
+
+                </div>
+
+                <div class="card achievement-card">
+
+                    <h3>Quiz Competitions</h3>
+
+                    <p>
+                        Received prizes in quizzes, demonstrating
+                        curiosity and a commitment to learning.
+                    </p>
+
+                </div>
+
+                <div class="card achievement-card">
+
+                    <h3>NCC A Certificate</h3>
+
+                    <p>
+                        NCC A Certificate holder, reflecting participation
+                        in structured cadet training and activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RESUME -->
+
+        <section class="resume" id="resume">
+
+            <div class="section-heading">
+
+                <span>Professional Profile</span>
+
+                <h2>My Resume</h2>
+
+            </div>
+
+            <div class="resume-box">
+
+                <h3 style="color: #17152b; margin-bottom: 12px;">
+                    Avuthu Yaswitha Reddy
+                </h3>
+
+                <p style="margin-bottom: 22px;">
+                    First-year B.Tech student in CSE (AI & ML),
+                    interested in technology, web development,
+                    communication, and continuous learning.
+                </p>
+
+                <a href="resume.pdf" class="btn" download>
+                    Download Resume PDF
+                </a>
+
+                <p style="margin-top: 18px; font-size: 13px;">
+                    Place your resume PDF in the same folder
+                    as this HTML file and name it resume.pdf.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT ME -->
+
+        <section id="contact">
+
+            <div class="section-heading">
+
+                <span>Let's Connect</span>
+
+                <h2>Contact Me</h2>
+
+                <p>
+                    Thank you for visiting my portfolio.
+                    I welcome opportunities to learn, collaborate,
+                    and explore technology.
+                </p>
+
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- EMAIL -->
+
+                <div class="contact-card">
+
+                    <h3>Email</h3>
+
+                    <p>
+                        <a href="mailto:aishwitareddy0701@gmail.com">
+                            aishwitareddy0701@gmail.com
+                        </a>
+                    </p>
+
+                </div>
+
+                <!-- GITHUB -->
+
+                <div class="contact-card">
+
+                    <h3>GitHub</h3>
+
+                    <p>
+                        <a href="https://github.com/yaswithareddyavuthu"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit My GitHub Profile
+                        </a>
+                    </p>
+
+                </div>
+
+                <!-- LOCATION -->
+
+                <div class="contact-card">
+
+                    <h3>Location</h3>
+
+                    <p>Andhra Pradesh, India</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Avuthu Yaswitha Reddy.
+            All rights reserved.
+        </p>
+
+        <p>Designed with HTML and CSS.</p>
+
+        <p>Learning today. Building for tomorrow.</p>
+
+    </footer>
+
+</body>
+
+</html>
